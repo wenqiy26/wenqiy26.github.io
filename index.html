@@ -13076,7 +13076,7 @@ div#notebook {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
@@ -13097,55 +13097,9 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Drive already mounted at /content/drive; to attempt to forcibly remount, call drive.mount(&#34;/content/drive&#34;, force_remount=True).
+<pre>Mounted at /content/drive
 </pre>
 </div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
-
-<span class="n">ls</span> <span class="n">drive</span><span class="o">/</span><span class="n">MyDrive</span><span class="o">/</span><span class="n">Colab</span>\ <span class="n">Notebooks</span><span class="o">/</span><span class="n">Project_folder</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Milestone1.ipynb  new_file_test.txt
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[6]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre></pre>
-</div>
-
 </div>
 
 </div>
@@ -13160,6 +13114,8 @@ div#notebook {
 <div class=" highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
 
 <span class="n">cd</span> <span class="n">drive</span><span class="o">/</span><span class="n">MyDrive</span><span class="o">/</span><span class="n">Colab</span>\ <span class="n">Notebooks</span><span class="o">/</span><span class="n">Project_folder</span>
+
+<span class="n">jupyter</span> <span class="n">nbconvert</span> <span class="o">--</span><span class="n">to</span> <span class="n">html</span> <span class="n">Milestone1</span><span class="o">.</span><span class="n">ipynb</span>
 </pre></div>
 
     </div>
@@ -13169,11 +13125,12 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
-<span class="n">jupyter</span> <span class="n">nbconvert</span> <span class="o">--</span><span class="n">to</span> <span class="n">html</span> <span class="n">drive</span><span class="o">/</span><span class="n">MyDrive</span><span class="o">/</span><span class="n">Colab</span> <span class="n">Notebooks</span><span class="o">/</span><span class="n">Project_folder</span><span class="o">/</span><span class="n">Milestone1</span><span class="o">.</span><span class="n">ipynb</span>
+<div class=" highlight hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+<span class="o">%</span><span class="n">cd</span> <span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">drive</span><span class="o">/</span><span class="n">MyDrive</span><span class="o">/</span><span class="n">Colab</span> <span class="n">Notebooks</span><span class="o">/</span><span class="n">Project_folder</span>
 </pre></div>
 
     </div>
@@ -13190,172 +13147,855 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[NbConvertApp] WARNING | pattern &#39;drive/MyDrive/Colab&#39; matched no files
-[NbConvertApp] WARNING | pattern &#39;Notebooks/Project_folder/Milestone1.ipynb&#39; matched no files
-This application is used to convert notebook files (*.ipynb)
-        to various other formats.
-
-        WARNING: THE COMMANDLINE INTERFACE MAY CHANGE IN FUTURE RELEASES.
-
-Options
-=======
-The options below are convenience aliases to configurable class-options,
-as listed in the &#34;Equivalent to&#34; description-line of the aliases.
-To see all configurable class-options for some &lt;cmd&gt;, use:
-    &lt;cmd&gt; --help-all
-
---debug
-    set log level to logging.DEBUG (maximize logging output)
-    Equivalent to: [--Application.log_level=10]
---show-config
-    Show the application&#39;s configuration (human-readable format)
-    Equivalent to: [--Application.show_config=True]
---show-config-json
-    Show the application&#39;s configuration (json format)
-    Equivalent to: [--Application.show_config_json=True]
---generate-config
-    generate default config file
-    Equivalent to: [--JupyterApp.generate_config=True]
--y
-    Answer yes to any questions instead of prompting.
-    Equivalent to: [--JupyterApp.answer_yes=True]
---execute
-    Execute the notebook prior to export.
-    Equivalent to: [--ExecutePreprocessor.enabled=True]
---allow-errors
-    Continue notebook execution even if one of the cells throws an error and include the error message in the cell output (the default behaviour is to abort conversion). This flag is only relevant if &#39;--execute&#39; was specified, too.
-    Equivalent to: [--ExecutePreprocessor.allow_errors=True]
---stdin
-    read a single notebook file from stdin. Write the resulting notebook with default basename &#39;notebook.*&#39;
-    Equivalent to: [--NbConvertApp.from_stdin=True]
---stdout
-    Write notebook output to stdout instead of files.
-    Equivalent to: [--NbConvertApp.writer_class=StdoutWriter]
---inplace
-    Run nbconvert in place, overwriting the existing notebook (only 
-            relevant when converting to notebook format)
-    Equivalent to: [--NbConvertApp.use_output_suffix=False --NbConvertApp.export_format=notebook --FilesWriter.build_directory=]
---clear-output
-    Clear output of current file and save in place, 
-            overwriting the existing notebook.
-    Equivalent to: [--NbConvertApp.use_output_suffix=False --NbConvertApp.export_format=notebook --FilesWriter.build_directory= --ClearOutputPreprocessor.enabled=True]
---no-prompt
-    Exclude input and output prompts from converted document.
-    Equivalent to: [--TemplateExporter.exclude_input_prompt=True --TemplateExporter.exclude_output_prompt=True]
---no-input
-    Exclude input cells and output prompts from converted document. 
-            This mode is ideal for generating code-free reports.
-    Equivalent to: [--TemplateExporter.exclude_output_prompt=True --TemplateExporter.exclude_input=True]
---log-level=&lt;Enum&gt;
-    Set the log level by value or name.
-    Choices: any of [0, 10, 20, 30, 40, 50, &#39;DEBUG&#39;, &#39;INFO&#39;, &#39;WARN&#39;, &#39;ERROR&#39;, &#39;CRITICAL&#39;]
-    Default: 30
-    Equivalent to: [--Application.log_level]
---config=&lt;Unicode&gt;
-    Full path of a config file.
-    Default: &#39;&#39;
-    Equivalent to: [--JupyterApp.config_file]
---to=&lt;Unicode&gt;
-    The export format to be used, either one of the built-in formats
-            [&#39;asciidoc&#39;, &#39;custom&#39;, &#39;html&#39;, &#39;latex&#39;, &#39;markdown&#39;, &#39;notebook&#39;, &#39;pdf&#39;, &#39;python&#39;, &#39;rst&#39;, &#39;script&#39;, &#39;slides&#39;]
-            or a dotted object name that represents the import path for an
-            `Exporter` class
-    Default: &#39;html&#39;
-    Equivalent to: [--NbConvertApp.export_format]
---template=&lt;Unicode&gt;
-    Name of the template file to use
-    Default: &#39;&#39;
-    Equivalent to: [--TemplateExporter.template_file]
---writer=&lt;DottedObjectName&gt;
-    Writer class used to write the 
-                                        results of the conversion
-    Default: &#39;FilesWriter&#39;
-    Equivalent to: [--NbConvertApp.writer_class]
---post=&lt;DottedOrNone&gt;
-    PostProcessor class used to write the
-                                        results of the conversion
-    Default: &#39;&#39;
-    Equivalent to: [--NbConvertApp.postprocessor_class]
---output=&lt;Unicode&gt;
-    overwrite base name use for output files.
-                can only be used when converting one notebook at a time.
-    Default: &#39;&#39;
-    Equivalent to: [--NbConvertApp.output_base]
---output-dir=&lt;Unicode&gt;
-    Directory to write output(s) to. Defaults
-                                  to output to the directory of each notebook. To recover
-                                  previous default behaviour (outputting to the current 
-                                  working directory) use . as the flag value.
-    Default: &#39;&#39;
-    Equivalent to: [--FilesWriter.build_directory]
---reveal-prefix=&lt;Unicode&gt;
-    The URL prefix for reveal.js (version 3.x).
-            This defaults to the reveal CDN, but can be any url pointing to a copy 
-            of reveal.js. 
-            For speaker notes to work, this must be a relative path to a local 
-            copy of reveal.js: e.g., &#34;reveal.js&#34;.
-            If a relative path is given, it must be a subdirectory of the
-            current directory (from which the server is run).
-            See the usage documentation
-            (https://nbconvert.readthedocs.io/en/latest/usage.html#reveal-js-html-slideshow)
-            for more details.
-    Default: &#39;&#39;
-    Equivalent to: [--SlidesExporter.reveal_url_prefix]
---nbformat=&lt;Enum&gt;
-    The nbformat version to write.
-            Use this to downgrade notebooks.
-    Choices: any of [1, 2, 3, 4]
-    Default: 4
-    Equivalent to: [--NotebookExporter.nbformat_version]
-
-Examples
---------
-
-    The simplest way to use nbconvert is
-
-            &gt; jupyter nbconvert mynotebook.ipynb
-
-            which will convert mynotebook.ipynb to the default format (probably HTML).
-
-            You can specify the export format with `--to`.
-            Options include [&#39;asciidoc&#39;, &#39;custom&#39;, &#39;html&#39;, &#39;latex&#39;, &#39;markdown&#39;, &#39;notebook&#39;, &#39;pdf&#39;, &#39;python&#39;, &#39;rst&#39;, &#39;script&#39;, &#39;slides&#39;].
-
-            &gt; jupyter nbconvert --to latex mynotebook.ipynb
-
-            Both HTML and LaTeX support multiple output templates. LaTeX includes
-            &#39;base&#39;, &#39;article&#39; and &#39;report&#39;.  HTML includes &#39;basic&#39; and &#39;full&#39;. You
-            can specify the flavor of the format used.
-
-            &gt; jupyter nbconvert --to html --template basic mynotebook.ipynb
-
-            You can also pipe the output to stdout, rather than a file
-
-            &gt; jupyter nbconvert mynotebook.ipynb --stdout
-
-            PDF is generated via latex
-
-            &gt; jupyter nbconvert mynotebook.ipynb --to pdf
-
-            You can get (and serve) a Reveal.js-powered slideshow
-
-            &gt; jupyter nbconvert myslides.ipynb --to slides --post serve
-
-            Multiple notebooks can be given at the command line in a couple of 
-            different ways:
-
-            &gt; jupyter nbconvert notebook*.ipynb
-            &gt; jupyter nbconvert notebook1.ipynb notebook2.ipynb
-
-            or you can specify the notebooks list in a config file, containing::
-
-                c.NbConvertApp.notebooks = [&#34;my_notebook.ipynb&#34;]
-
-            &gt; jupyter nbconvert --config mycfg.py
-
-To see all available configurables, use `--help-all`.
-
+<pre>Drive already mounted at /content/drive; to attempt to forcibly remount, call drive.mount(&#34;/content/drive&#34;, force_remount=True).
+/content/drive/MyDrive/Colab Notebooks/Project_folder
 </pre>
 </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="CMPS-3160-Final-Project"><strong><a href="https://wenqiy26.github.io/">CMPS 3160 Final Project</a></strong><a class="anchor-link" href="#CMPS-3160-Final-Project">&#182;</a></h1><h2 id="Name:-Aaron-Yang-&amp;-Wendy-Yang">Name: Aaron Yang &amp; Wendy Yang<a class="anchor-link" href="#Name:-Aaron-Yang-&amp;-Wendy-Yang">&#182;</a></h2><h2 id="Title:-Correlation-between-Average-SAT-Scores-and-Economic-Distribution-for-all-50-States">Title: Correlation between Average SAT Scores and Economic Distribution for all 50 States<a class="anchor-link" href="#Title:-Correlation-between-Average-SAT-Scores-and-Economic-Distribution-for-all-50-States">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Project-Goals"><strong>Project Goals</strong><a class="anchor-link" href="#Project-Goals">&#182;</a></h1><p>The goal of this project is to investigate the correlation of student SAT data given different different economic distributions such as income and expenses from different states in the U.S. and the various educations of the students.</p>
+<p>Our hypothesis is that the average SAT score has a positive correlation with the median household income. The average SAT score would also have a positive correlation with percentage of adults having high school diploma and percentage of adults having college degree.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Collaboration-Plan"><strong>Collaboration Plan</strong><a class="anchor-link" href="#Collaboration-Plan">&#182;</a></h1><p>For the collaboration of the group, we start on it right after every Wednesday and Friday after Data Science class as a group time to meet, talk about next steps, and divide tasks. We will be working on smaller tasks individually and discuss our preogress together.  For what technologies we use, we use Google Collab and we share our codes through our repositories in GitHub in order to make changes to any sort of files or edits. Through this collaboration, we are able to make changes on our page individually.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="ETL-(Extraction,-Transform,-and-Load)"><strong>ETL (Extraction, Transform, and Load)</strong><a class="anchor-link" href="#ETL-(Extraction,-Transform,-and-Load)">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For our analysis, we loaded one dataset that was taken from Cengage. From the data in <a href="https://https://www.cengage.com/cgi-wadsworth/course_products_wp.pl?fid=M20b&amp;flag=student&amp;product_isbn_issn=9780495109723&amp;discipline_number=17">Cengage</a>. The data set is downloaded as a CSV file. Then, we uploaded the CSV file into the Google Drive and import it Google Collab. It displays the first two columns which is the state and region as categorical data, the rest would be quantitative. There are many columns to this dataset that was not needed, so a majority of the columns that did not coorelate well with our data was disregarded and formed into a new dataset in order to make our observation easier.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s2">&quot;display.max_rows&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;display.max_columns&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;MilestoneData.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[&nbsp;]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+
+  <div id="df-837060cf-2897-4368-bc36-e82fb434f712">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>state</th>
+      <th>region</th>
+      <th>pop</th>
+      <th>area</th>
+      <th>density</th>
+      <th>metro</th>
+      <th>waste</th>
+      <th>energy</th>
+      <th>miles</th>
+      <th>toxic</th>
+      <th>green</th>
+      <th>house</th>
+      <th>senate</th>
+      <th>csat</th>
+      <th>vsat</th>
+      <th>msat</th>
+      <th>percent</th>
+      <th>expense</th>
+      <th>income</th>
+      <th>high</th>
+      <th>college</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Alabama</td>
+      <td>South</td>
+      <td>4041000.0</td>
+      <td>52423.0</td>
+      <td>77.08</td>
+      <td>67.4</td>
+      <td>1.11</td>
+      <td>393.0</td>
+      <td>10.5</td>
+      <td>27.86</td>
+      <td>29.25</td>
+      <td>30.0</td>
+      <td>10.0</td>
+      <td>991</td>
+      <td>476</td>
+      <td>515</td>
+      <td>8</td>
+      <td>3627</td>
+      <td>27.498</td>
+      <td>66.9</td>
+      <td>15.7</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Alaska</td>
+      <td>West</td>
+      <td>550000.0</td>
+      <td>570374.0</td>
+      <td>0.96</td>
+      <td>41.1</td>
+      <td>0.91</td>
+      <td>991.0</td>
+      <td>7.2</td>
+      <td>37.41</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>20.0</td>
+      <td>920</td>
+      <td>439</td>
+      <td>481</td>
+      <td>41</td>
+      <td>8330</td>
+      <td>48.254</td>
+      <td>86.6</td>
+      <td>23.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Arizona</td>
+      <td>West</td>
+      <td>3665000.0</td>
+      <td>113642.0</td>
+      <td>32.25</td>
+      <td>79.0</td>
+      <td>0.79</td>
+      <td>258.0</td>
+      <td>9.7</td>
+      <td>19.65</td>
+      <td>18.37</td>
+      <td>13.0</td>
+      <td>33.0</td>
+      <td>932</td>
+      <td>442</td>
+      <td>490</td>
+      <td>26</td>
+      <td>4309</td>
+      <td>32.093</td>
+      <td>78.7</td>
+      <td>20.3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Arkansas</td>
+      <td>South</td>
+      <td>2351000.0</td>
+      <td>52075.0</td>
+      <td>45.15</td>
+      <td>40.1</td>
+      <td>0.85</td>
+      <td>330.0</td>
+      <td>8.9</td>
+      <td>24.60</td>
+      <td>26.04</td>
+      <td>25.0</td>
+      <td>37.0</td>
+      <td>1005</td>
+      <td>482</td>
+      <td>523</td>
+      <td>6</td>
+      <td>3700</td>
+      <td>24.643</td>
+      <td>66.3</td>
+      <td>13.3</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>California</td>
+      <td>West</td>
+      <td>29800000.0</td>
+      <td>155973.0</td>
+      <td>190.80</td>
+      <td>95.7</td>
+      <td>1.51</td>
+      <td>246.0</td>
+      <td>8.7</td>
+      <td>3.26</td>
+      <td>15.65</td>
+      <td>50.0</td>
+      <td>47.0</td>
+      <td>897</td>
+      <td>415</td>
+      <td>482</td>
+      <td>47</td>
+      <td>4491</td>
+      <td>41.716</td>
+      <td>76.2</td>
+      <td>23.4</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-837060cf-2897-4368-bc36-e82fb434f712')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-837060cf-2897-4368-bc36-e82fb434f712 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-837060cf-2897-4368-bc36-e82fb434f712');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="SAT-Data-by-Economic-and-Region-Data"><strong>SAT Data by Economic and Region Data</strong><a class="anchor-link" href="#SAT-Data-by-Economic-and-Region-Data">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now we are going to drop the unnecessary columns from this dataset to make our data more organized and readable. We will also neglect certain columns that do not pertain our dataset such as population, area, density, metro, waste, toxic, senate, energy, green, miles, and house. Then we will sort the index and values to find a correlation of SAT scores by various economic regions/state/ and income. Now, we only have 10 variables that we want to focus on: state, geographic region, mean composite SAT score, mean math SAT score, mean verbal SAT score, % HS graduates taking SAT, per pupil expenditures prim&amp;sec, median household income ($1,000), % adults HS diploma, and % adults college degree.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="c1">#Drops variables that we don&#39;t need</span>
+<span class="n">df_drop</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;pop&#39;</span><span class="p">,</span> <span class="s1">&#39;area&#39;</span><span class="p">,</span><span class="s1">&#39;density&#39;</span><span class="p">,</span><span class="s1">&#39;metro&#39;</span><span class="p">,</span><span class="s1">&#39;waste&#39;</span><span class="p">,</span><span class="s1">&#39;toxic&#39;</span><span class="p">,</span><span class="s1">&#39;senate&#39;</span><span class="p">,</span><span class="s1">&#39;energy&#39;</span><span class="p">,</span><span class="s1">&#39;green&#39;</span><span class="p">,</span><span class="s1">&#39;miles&#39;</span><span class="p">,</span><span class="s1">&#39;house&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">df_drop</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[&nbsp;]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+
+  <div id="df-6ab694f2-10cd-4d17-acc0-6e1809a1987a">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>state</th>
+      <th>region</th>
+      <th>csat</th>
+      <th>vsat</th>
+      <th>msat</th>
+      <th>percent</th>
+      <th>expense</th>
+      <th>income</th>
+      <th>high</th>
+      <th>college</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Alabama</td>
+      <td>South</td>
+      <td>991</td>
+      <td>476</td>
+      <td>515</td>
+      <td>8</td>
+      <td>3627</td>
+      <td>27.498</td>
+      <td>66.9</td>
+      <td>15.7</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Alaska</td>
+      <td>West</td>
+      <td>920</td>
+      <td>439</td>
+      <td>481</td>
+      <td>41</td>
+      <td>8330</td>
+      <td>48.254</td>
+      <td>86.6</td>
+      <td>23.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Arizona</td>
+      <td>West</td>
+      <td>932</td>
+      <td>442</td>
+      <td>490</td>
+      <td>26</td>
+      <td>4309</td>
+      <td>32.093</td>
+      <td>78.7</td>
+      <td>20.3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Arkansas</td>
+      <td>South</td>
+      <td>1005</td>
+      <td>482</td>
+      <td>523</td>
+      <td>6</td>
+      <td>3700</td>
+      <td>24.643</td>
+      <td>66.3</td>
+      <td>13.3</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>California</td>
+      <td>West</td>
+      <td>897</td>
+      <td>415</td>
+      <td>482</td>
+      <td>47</td>
+      <td>4491</td>
+      <td>41.716</td>
+      <td>76.2</td>
+      <td>23.4</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-6ab694f2-10cd-4d17-acc0-6e1809a1987a')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-6ab694f2-10cd-4d17-acc0-6e1809a1987a button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-6ab694f2-10cd-4d17-acc0-6e1809a1987a');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can see that state and region are categorical, while csat, vsat, msat, percent, expense, income, high, and college are all quantitative. 
+The data set has a defult index. Our first step is to set states as the index.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="c1"># list the data type for all variables </span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_drop</span><span class="o">.</span><span class="n">dtypes</span><span class="p">)</span>
+<span class="n">df_by_state</span> <span class="o">=</span> <span class="n">df_drop</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;state&quot;</span><span class="p">)</span>
+<span class="n">df_by_state</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>state       object
+region      object
+csat         int64
+vsat         int64
+msat         int64
+percent      int64
+expense      int64
+income     float64
+high       float64
+college    float64
+dtype: object</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[&nbsp;]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+
+  <div id="df-2914897c-af36-4c68-8b83-720813148eae">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>region</th>
+      <th>csat</th>
+      <th>vsat</th>
+      <th>msat</th>
+      <th>percent</th>
+      <th>expense</th>
+      <th>income</th>
+      <th>high</th>
+      <th>college</th>
+    </tr>
+    <tr>
+      <th>state</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Alabama</th>
+      <td>South</td>
+      <td>991</td>
+      <td>476</td>
+      <td>515</td>
+      <td>8</td>
+      <td>3627</td>
+      <td>27.498</td>
+      <td>66.9</td>
+      <td>15.7</td>
+    </tr>
+    <tr>
+      <th>Alaska</th>
+      <td>West</td>
+      <td>920</td>
+      <td>439</td>
+      <td>481</td>
+      <td>41</td>
+      <td>8330</td>
+      <td>48.254</td>
+      <td>86.6</td>
+      <td>23.0</td>
+    </tr>
+    <tr>
+      <th>Arizona</th>
+      <td>West</td>
+      <td>932</td>
+      <td>442</td>
+      <td>490</td>
+      <td>26</td>
+      <td>4309</td>
+      <td>32.093</td>
+      <td>78.7</td>
+      <td>20.3</td>
+    </tr>
+    <tr>
+      <th>Arkansas</th>
+      <td>South</td>
+      <td>1005</td>
+      <td>482</td>
+      <td>523</td>
+      <td>6</td>
+      <td>3700</td>
+      <td>24.643</td>
+      <td>66.3</td>
+      <td>13.3</td>
+    </tr>
+    <tr>
+      <th>California</th>
+      <td>West</td>
+      <td>897</td>
+      <td>415</td>
+      <td>482</td>
+      <td>47</td>
+      <td>4491</td>
+      <td>41.716</td>
+      <td>76.2</td>
+      <td>23.4</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-2914897c-af36-4c68-8b83-720813148eae')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-2914897c-af36-4c68-8b83-720813148eae button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-2914897c-af36-4c68-8b83-720813148eae');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Exploratory-Data-Analysis-(EDA)"><strong>Exploratory Data Analysis (EDA)</strong><a class="anchor-link" href="#Exploratory-Data-Analysis-(EDA)">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>First, we would like to see the distribution of the average composite SAT scores for different states. 
+To see the distribution of the average composite SAT score, we use a histogram to visualize the distrubution for difference states.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="c1"># plot a histogram showing average SAT scores distribution </span>
+<span class="n">df_by_state</span><span class="p">[</span><span class="s2">&quot;csat&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span><span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fc4e4731090&gt;</pre>
+</div>
+
 </div>
 
 <div class="output_area">
@@ -13363,68 +14003,333 @@ To see all available configurables, use `--help-all`.
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">CalledProcessError</span>                        Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-5-2021273c06d9&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>get_ipython<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>run_cell_magic<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;shell&#39;</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;&#39;</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;jupyter nbconvert --to html drive/MyDrive/Colab Notebooks/Project_folder/Milestone1.ipynb\n&#39;</span><span class="ansi-blue-fg">)</span>
 
-<span class="ansi-green-fg">/usr/local/lib/python3.7/dist-packages/IPython/core/interactiveshell.py</span> in <span class="ansi-cyan-fg">run_cell_magic</span><span class="ansi-blue-fg">(self, magic_name, line, cell)</span>
-<span class="ansi-green-intense-fg ansi-bold">   2357</span>             <span class="ansi-green-fg">with</span> self<span class="ansi-blue-fg">.</span>builtin_trap<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">   2358</span>                 args <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">(</span>magic_arg_s<span class="ansi-blue-fg">,</span> cell<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">-&gt; 2359</span><span class="ansi-red-fg">                 </span>result <span class="ansi-blue-fg">=</span> fn<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   2360</span>             <span class="ansi-green-fg">return</span> result
-<span class="ansi-green-intense-fg ansi-bold">   2361</span> 
 
-<span class="ansi-green-fg">/usr/local/lib/python3.7/dist-packages/google/colab/_system_commands.py</span> in <span class="ansi-cyan-fg">_shell_cell_magic</span><span class="ansi-blue-fg">(args, cmd)</span>
-<span class="ansi-green-intense-fg ansi-bold">    107</span>   result <span class="ansi-blue-fg">=</span> _run_command<span class="ansi-blue-fg">(</span>cmd<span class="ansi-blue-fg">,</span> clear_streamed_output<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">False</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    108</span>   <span class="ansi-green-fg">if</span> <span class="ansi-green-fg">not</span> parsed_args<span class="ansi-blue-fg">.</span>ignore_errors<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 109</span><span class="ansi-red-fg">     </span>result<span class="ansi-blue-fg">.</span>check_returncode<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    110</span>   <span class="ansi-green-fg">return</span> result
-<span class="ansi-green-intense-fg ansi-bold">    111</span> 
-
-<span class="ansi-green-fg">/usr/local/lib/python3.7/dist-packages/google/colab/_system_commands.py</span> in <span class="ansi-cyan-fg">check_returncode</span><span class="ansi-blue-fg">(self)</span>
-<span class="ansi-green-intense-fg ansi-bold">    133</span>     <span class="ansi-green-fg">if</span> self<span class="ansi-blue-fg">.</span>returncode<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    134</span>       raise subprocess.CalledProcessError(
-<span class="ansi-green-fg">--&gt; 135</span><span class="ansi-red-fg">           returncode=self.returncode, cmd=self.args, output=self.output)
-</span><span class="ansi-green-intense-fg ansi-bold">    136</span> 
-<span class="ansi-green-intense-fg ansi-bold">    137</span>   <span class="ansi-green-fg">def</span> _repr_pretty_<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> p<span class="ansi-blue-fg">,</span> cycle<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>  <span class="ansi-red-fg"># pylint:disable=unused-argument</span>
-
-<span class="ansi-red-fg">CalledProcessError</span>: Command &#39;jupyter nbconvert --to html drive/MyDrive/Colab Notebooks/Project_folder/Milestone1.ipynb
-&#39; returned non-zero exit status 255.</pre>
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+"
+>
 </div>
+
 </div>
 
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To see which states have the highest average composite SAT score. We start by sorting the data set, we find out that Iowa, North Dakota, and South Dakota are the top three states with the highest average composite SAT score.</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span>
+<div class=" highlight hl-python"><pre><span></span><span class="c1"># Sort csat decending to find the states with highest average composite SAT score</span>
+<span class="n">df_by_sat</span> <span class="o">=</span> <span class="n">df_by_state</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;csat&quot;</span><span class="p">,</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">df_by_sat</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[&nbsp;]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+
+  <div id="df-43a89ff7-790c-4a60-b75a-a336b575cfa1">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>region</th>
+      <th>csat</th>
+      <th>vsat</th>
+      <th>msat</th>
+      <th>percent</th>
+      <th>expense</th>
+      <th>income</th>
+      <th>high</th>
+      <th>college</th>
+    </tr>
+    <tr>
+      <th>state</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Iowa</th>
+      <td>Midwest</td>
+      <td>1093</td>
+      <td>515</td>
+      <td>578</td>
+      <td>5</td>
+      <td>4679</td>
+      <td>30.565</td>
+      <td>80.1</td>
+      <td>16.9</td>
+    </tr>
+    <tr>
+      <th>North Dakota</th>
+      <td>Midwest</td>
+      <td>1073</td>
+      <td>502</td>
+      <td>571</td>
+      <td>6</td>
+      <td>4199</td>
+      <td>27.051</td>
+      <td>76.7</td>
+      <td>18.1</td>
+    </tr>
+    <tr>
+      <th>South Dakota</th>
+      <td>Midwest</td>
+      <td>1047</td>
+      <td>496</td>
+      <td>551</td>
+      <td>5</td>
+      <td>3965</td>
+      <td>26.223</td>
+      <td>77.1</td>
+      <td>17.2</td>
+    </tr>
+    <tr>
+      <th>Kansas</th>
+      <td>Midwest</td>
+      <td>1039</td>
+      <td>493</td>
+      <td>546</td>
+      <td>10</td>
+      <td>4874</td>
+      <td>31.803</td>
+      <td>81.3</td>
+      <td>21.1</td>
+    </tr>
+    <tr>
+      <th>Utah</th>
+      <td>West</td>
+      <td>1031</td>
+      <td>494</td>
+      <td>537</td>
+      <td>5</td>
+      <td>2960</td>
+      <td>34.342</td>
+      <td>85.1</td>
+      <td>22.3</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-43a89ff7-790c-4a60-b75a-a336b575cfa1')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-43a89ff7-790c-4a60-b75a-a336b575cfa1 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-43a89ff7-790c-4a60-b75a-a336b575cfa1');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Next, we would love to see if there any correlations between average composite SAT scores and percentage of adults having a high school diploma/college degress by using a scatterplot.</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span>
+<div class=" highlight hl-python"><pre><span></span><span class="c1"># Plot a scatterplot to show the correlation between average composite SAT scores and percentage of adults having a high school diploma </span>
+<span class="n">df_by_state</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="s2">&quot;high&quot;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;csat&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;DarkBlue&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">% a</span><span class="s2">dults having a high school diploma&quot;</span><span class="p">)</span>
+<span class="n">df_by_state</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="s2">&quot;college&quot;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;csat&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;LightBlue&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">% a</span><span class="s2">dults having a college degree&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[34]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fc4e43a4bd0&gt;</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYQAAAEGCAYAAABlxeIAAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAADh0RVh0U29mdHdhcmUAbWF0cGxvdGxpYiB2ZXJzaW9uMy4yLjIsIGh0dHA6Ly9tYXRwbG90bGliLm9yZy+WH4yJAAAgAElEQVR4nO3df3xV1Znv8c8TCAWsRKQpF1EDOioIUcAQlVoBoeqIXqgDY6m2aKNUb2Vae6/Vakfoz3FG5krb21dbWwTb28Yf1Opgx1KxitrbEQKigo5XK4Tyo3BIJaKJJCTP/HF2QhLOSc5Jzu/9fb9e55VkZ5991so+Oc9eaz1rbXN3REREirJdABERyQ0KCCIiAiggiIhIQAFBREQABQQREQn0z3YBEvGRj3zER40ale1iiIjklY0bN+5399JE98+LgDBq1ChqamqyXQwRkbxiZrXJ7K8uIxERARQQREQkoIAgIiJAnowhSO5pbm5m586dfPDBB9kuikjoDRw4kBNPPJHi4uI+HUcBQXpl586dHHvssYwaNQozy3ZxRELL3amrq2Pnzp2MHj26T8dSl5H0ygcffMCwYcN6HQyam1t4//0mmptbUlwykXAxM4YNG5aS1rpaCNJrvQ0GdXWN1Na+ixm4Q1nZEIYNG5Ti0omER6pa6WohSEY1N7dQW/sura1OS4vT2urU1r6rloJIDlBAkIxqamqh68WMWXR7MiKRCBdccAHjx4/nsccea98+e/Zsdu/e3acyjho1iv3793e7z7XXXsuqVasAWLZsGQ0NDQkfv+Nz+2L37t3MnTu3z8dJ1LPPPsvll18e83fXX389r732WrfPT1W926xcuZKbb745JcdK5Jx3fL0f/ehH/OxnP8tY+TJFAUEyasCAfnS9J5N7dHsyqqurufHGG1m/fj3Lli0DYPXq1UycOJETTjghVcVNSLIBIVVOOOGElH7A9sVPf/pTzjzzzGwXI2NuvPFGPvvZz2a7GCmngCAZE4k0sHnzPo45ppiiIqNfP6OoyCgrG0JxcXIBobi4mIaGBg4dOkS/fv04fPgwy5Yt4ytf+Urc56xevZpzzz2XiRMnMnPmTPbu3QtAXV0dF198MePGjeP666+n7S6C27dvZ/z48e3PX7p0KUuWLOl0zO9973vs3r2b6dOnM336dFpaWrj22msZP3485eXl3HvvvTHL8txzzzFlyhROOeWU9g/19957jxkzZjBp0iTKy8t5/PHHAbj99tv5wQ9+0P7cJUuWsHTp0k7lW7lyJVdeeSWXXnopp512Wqe/w/Llyzn99NOprKzkhhtuiHnVun79es4//3wmTpzIlClTeOONN2KW+7333mPu3LmMGTOGq6++uv1vNW3atPblZbp7vVj17uj9999n1qxZnH322YwfP56HHnoIgA0bNjBlyhTOPvtsKisrOXjwIBBtJcWqc3V1NeXl5YwfP57bbrutx+3xrFixor0uf/jDH9q3t52Dtrp/8YtfZMKECYwfP57169cfdZzt27dz0UUXcdZZZzFjxgx27NgBRFtNN910E+eddx6nnHIKzz77LJ/73OcYO3Ys1157bfvzb7rpJioqKhg3bhyLFy/usdy95u45/zjnnHNccstrr72W1P6//OVrPmjQvV5S8l0fNOhe//nPt/h77x3ypqbDvXr9AwcO+GWXXebnnHOOr1271r/73e/6ihUrun3OX//6V29tbXV395/85Cf+5S9/2d3dFy1a5F//+tfd3f2JJ55wwCORiG/bts3HjRvX/vx77rnHFy9e7O7uCxYs8EceecTd3cvKyjwSibi7e01Njc+cObP9Oe+8885R5ViwYIHPnTvXW1pafOvWrX7qqae6u3tzc7PX19e7u3skEvFTTz3VW1tbfdOmTX7hhRe2P3/s2LG+Y8eOTuVbsWKFjx492g8cOOCNjY1+8skn+44dO3zXrl1eVlbmdXV13tTU5BdccIF/4QtfOKpM9fX13tzc7O7uTz31lF955ZVH7fPMM8/4kCFD/M9//rO3tLT4eeed588//7y7u0+dOtU3bNjQ7evFq3dHq1at8uuvv7795wMHDvihQ4d89OjRvn79+k5l7a7OJ510ku/bt8+bm5t9+vTp/utf/zru9q7nsM3u3bvb9z906JBPmTKlvS6LFy/2e+65p73ubWVet25dp3PStv/ll1/uK1eudHf35cuX++zZs9v/JldddZW3trb6Y4895scee6y/8sor3tLS4pMmTfKXXnrJ3d3r6urc3f3w4cM+depUf/nll4/628X6nwRqPInPWrUQJO0ikQaqqtbQ2HiY+vomGhsPs3DhUzQ0HE66ZdCmpKSE3/zmN9TU1DBp0iRWr17N3LlzueGGG5g7dy5//OMfj3rOzp07ueSSSygvL+eee+5h69atQPSq9ZprrgFg1qxZDB06tNd1PeWUU3j77bdZtGgRv/3tbxkyZEjM/ebMmUNRURFnnnlme0vF3bnjjjs466yzmDlzJrt27WLv3r1MnDiRffv2sXv3bl5++WWGDh3KSSeddNQxZ8yYQUlJCQMHDuTMM8+ktraW9evXM3XqVI4//niKi4uZN29ezPLU19czb948xo8fzy233NL+t+mqsrKSE088kaKiIiZMmMD27ds7/b6n14tV747Ky8t56qmnuO2223j++ecpKSnhjTfeYMSIEUyePBmAIUOG0L9//7h13rBhA9OmTaO0tJT+/ftz9dVX89xzz8XdHs+LL77Yvv+AAQO46qqr4u47f/58AC688ELeffddDhw40On3f/zjH/n0pz8NwGc+8xleeOGF9t9dccUVmBnl5eUMHz6c8vJyioqKGDduXPvf9+GHH2bSpElMnDiRrVu39jhe01sKCJJ227fXM2BA57dacXER27fXp+T43/zmN7nzzjuprq7mggsu4IEHHjiqawdg0aJF3Hzzzbz66qv8+Mc/7jFvu3///rS2trb/nEie99ChQ3n55ZeZNm0aP/rRj7j++utj7vehD32o/XsPul1+8YtfEIlE2LhxI5s3b2b48OHtrzlv3jxWrVrFQw89FPeDqeMx27rREvWP//iPTJ8+nS1btrB69eq4de3La3R9flu9Ozr99NPZtGkT5eXlfO1rX+Mb3/hGwsfrTXlSpWvaZzJpoG11KCoq6lSfoqIiDh8+zLZt21i6dClPP/00r7zyCrNmzUrbCgEKCJJ2o0aV0NTU2mlbc3Mro0aV9PnYb775Jjt37mTatGk0NDRQVFSEmdHY2HjUvvX19YwcORKABx54oH37hRdeyC9/+UsAnnzySd555x0Ahg8fzr59+6irq+PQoUM88cQTMctw7LHHtvdp79+/n9bWVv7u7/6Ob33rW2zatCnhutTX1/PRj36U4uJinnnmGWprj6xcfNVVV/Hggw+yatWquFf5sUyePJl169bxzjvvcPjwYX71q1/Ffe22v83KlSsTPn5vXy+e3bt3M3jwYK655hpuvfVWNm3axBlnnMGePXvYsGEDAAcPHuz2g7+yspJ169axf/9+WlpaqK6uZurUqXG3x3Puueeybt066urqaG5u5pFHHom7b9tYxwsv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
+"
+>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYQAAAEGCAYAAABlxeIAAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAADh0RVh0U29mdHdhcmUAbWF0cGxvdGxpYiB2ZXJzaW9uMy4yLjIsIGh0dHA6Ly9tYXRwbG90bGliLm9yZy+WH4yJAAAgAElEQVR4nO3de3RU9fnv8fdDiCBIERSViwj6oygBDASpqBVUEI72qFBYamuLWi9dR62tPVbUqnhsV/WUVq2/1qpLRT0tqOD9rr+fFltbFSjeq1hUBIKEW+QacnnOH7MTh2SSTJLZM3v2fF5rBZI9e2a+37nsZ3+f72WbuyMiItIp1wUQEZFoUEAQERFAAUFERAIKCCIiAiggiIhIoHOuC5COfffd1wcNGpTrYoiI5JUlS5asd/c+6e6fFwFh0KBBLF68ONfFEBHJK2b2WVv2V8pIREQABQQREQkoIIiICJAnfQhSuKqrq1m1ahU7d+7MdVFEIqtr164MGDCA4uLiDj2OAoJE2qpVq+jRoweDBg3CzHJdHJHIcXc2bNjAqlWrGDx4cIceq+BTRlU1tWzcsYuqmtpcF0VS2LlzJ/vss4+CgUgzzIx99tknI63ogm4hfP7ldpaurcTMcHdGH9CTA7/WLdfFkkYUDERalqnvSMG2EKpqalm6tpJah5o6p9Zh6dpKtRREpGAVbEDYVl3bJKqaGduqFRDkKxUVFRxzzDEMHz6cxx57rGH7qaeeypo1azr02IMGDWL9+vUt7nP22WezYMECAG655Ra2b9+e9uMn37cj1qxZw/Tp0zv8OGFJrueECROyOok1U69xVBRsQOheXETjiwO5O92Li3JUIomiefPm8cMf/pA33niDW265BYAnn3ySUaNG0a9fv6yWpa0BIVP69esXq4NeFNXU1OS6CEABB4QunYsYfUBPigw6dzKKDEYf0JMunRUQ8l0mBwoUFxezfft2qqqqKCoqoqamhltuuYWf/exnzd7nySef5Bvf+AajRo1i4sSJfPHFFwBs2LCBE088kZKSEs4777yGE5JPP/2U4cOHN9x/zpw5zJ49e7fH/N3vfseaNWs47rjjOO6446itreXss89m+PDhjBgxgptvvjllWRYtWsRRRx3FwQcf3HBQ37p1KyeccAKjR49mxIgRPP744wDMmjWL3//+9w33nT17NnPmzNmtfHPnzmXatGlMmTKFIUOG7PY63H333Xz9619n7NixnH/++Vx88cVNyvPGG28wbtw4Ro0axVFHHcWHH36Ystw33XQTI0aM4PDDD2fWrFkALFu2jCOPPJKRI0cydepUNm3a1Ox7APDCCy8wbtw4Ro8ezYwZM9i6dSsAzzzzDIceeihlZWX86Ec/4lvf+hYA27Zt49xzz2Xs2LGMGjWq4XVJ5u5cfPHFDB06lIkTJ7Ju3bqG25YsWcL48eMpKytj8uTJlJeXA/Dmm28ycuRISktLufzyy3d7LU855RSOP/54TjjhhGafv7a2lssvv5wjjjiCkSNHcscdd7RY7w5x98j/lJWVeVh2Vtf4hu1VvrO6JrTnkPZ7//3327T/yspt/tiHa/zxj8r9sQ/X+MrKbR16/s2bN/tJJ53kZWVl/tJLL/mtt97q9957b4v32bhxo9fV1bm7+1133eWXXXaZu7tfcsklfv3117u7+1NPPeWAV1RU+CeffOIlJSUN9//1r3/t1113nbu7z5w50x9++GF3dz/ooIO8oqLC3d0XL17sEydObLjPpk2bmpRj5syZPn36dK+trfX33nvPDznkEHd3r66u9srKSnd3r6io8EMOOcTr6up86dKlfuyxxzbc/7DDDvOVK1fuVr57773XBw8e7Js3b/YdO3b4wIEDfeXKlb569Wo/6KCDfMOGDb5r1y4/5phj/KKLLmpSpsrKSq+urnZ39xdffNGnTZvWZJ9nnnnGx40b59u2Jd67DRs2uLv7iBEj/JVXXnF392uuucYvvfTSJq/R+PHj/c033/SKigr/5je/6Vu3bnV39xtvvNGvv/5637Fjhw8YMMBXrFjh7u5nnHGGn3zyye7ufuWVV/oDDzzQ8HoOGTKk4f71Fi5c6BMnTvSamhpfvXq19+zZ0x9++GHftWuXjxs3ztetW+fu7vPnz/dzzjnH3d1LSkr8tddec3f3K664YrfXsn///g31a+7577jjDr/hhhvc3X3nzp1eVlbWUP5kqb4rwGJvw7G2oEcZQaKloFZBPCQPFCA4+166tpL9unVp93vcs2dPnn76aQA2bdrEjTfeyKOPPsr555/Ppk2b+OlPf8q4ceN2u8+qVas4/fTTKS8vZ9euXQ1jwxctWsQjjzwCwMknn0yvXr3aWVM4+OCDWbFiBZdccgknn3wyJ554Ysr9TjvtNDp16sSwYcMaWiruzlVXXcWiRYvo1KkTq1ev5osvvmDUqFGsW7eONWvWUFFRQa9evTjwwAP59NNPd3vME044gZ49ewIwbNgwPvvsM9avX8/48ePp3bs3ADNmzOCjjz5qUp7KykpmzpzJ8uXLMTOqq6ub7PPSSy9xzjnn0K1bYsRf7969qaysZPPmzYwfPx6AmTNnMmPGjGZfn3/84x+8//77HH300QDs2rWLcePG8a9//YuDDz644T0588wzufPOO4FEi+KJJ55gzpw5QGLI88qVKznssMMaHnfRokWceeaZFBUV0a9fP44//ngAPvzwQ959910mTZoEJM7q+/bty+bNm9myZUvDZ+Q73/kOTz31VMPjTZo0qeE1a+75X3jhBd5+++2GFl5lZSXLly/v8JyDVAo+IEh8NAwUSOobqh8okImgf8MNN3D11Vczb948jjnmGKZPn860adN4/vnnd9vvkksu4bLLLuOUU07hlVdeaZL+aaxz587U1dU1/J3OePJevXrx1ltv8fzzz/PHP/6Rhx56iHvuuafJfl26dGn43YPX5U9/+hMVFRUsWbKE4uJiBg0a1PCcM2bMYMGCBaxdu5bTTz895XMnP2Z9Gi1d11xzDccddxyPPvoon376KRMmTEj7vm3h7kyaNIl58+bttn3ZsmUt3mfhwoUMHTq0Xc9XUlLC3//+9922b968ucX7de/evdXnd3duu+02Jk+e3OZytVXB9iFI/IQ5UGD58uWsWrWKCRMmsH37djp16oSZsWPHjib7VlZW0r9/fwDuu+++hu3HHnssf/7znwF49tlnG3Lg+++/P+vWrWPDhg1UVVXtdgaZrEePHmzZsgWA9evXU1dXx7e//W1+8YtfsHTp0rTrUllZyX777UdxcTEvv/wyn3321QrJp59+OvPnz2fBggUtnoE3dsQRR/CXv/yFTZs2UVNTw8KFC5t97vrXZu7cuSn3mTRpEvfee29DB/rGjRvp2bMnvXr14tVXXwXggQceaGgtpHLkkUfyt7/9jY8//hhI9A989NFHDB06lBUrVjS0eh588MGG+0yePJnbbrut4TP0z3/+s8njHnvssTz44IPU1tZSXl7Oyy+/DMDQoUOpqKhoCAjV1dW899577L333vTo0YPXX38dgPnz5zdb5uaef/Lkydx+++0NramPPvqIbdu2Nfs4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
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can see that there is a positive correlation between average composite SAT scores and percentage of adults having a high school diploma. There is also a positive correlation between average composite SAT scores and percentage of adults having a college degree. This result supports our hypothesis.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Next-Steps"><strong>Next Steps</strong><a class="anchor-link" href="#Next-Steps">&#182;</a></h1><p>For the next step, our group would love to investigate the correlation betwen average composite SAT scores and the median household income. We would also love to investiate to see if the SAT score is associated with geographic regions.</p>
+
+</div>
+</div>
 </div>
     </div>
   </div>
